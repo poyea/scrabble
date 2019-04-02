@@ -1,4 +1,4 @@
-# scrabble
+# Scrabble
 Scrabble game in C#, using WPF
 
 **Note -**
