@@ -8,3 +8,8 @@ Scrabble game in C#, using WPF
 
 **Note -**
 Functionality is not guaranteed.
+
+## If you like this, please
+* Star
+* Fork
+* Contribute
