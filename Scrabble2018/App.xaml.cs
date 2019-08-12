@@ -8,9 +8,6 @@ using System.Windows;
 
 namespace Scrabble2018
 {
-    /// <summary>
-    /// App.xaml 的互動邏輯
-    /// </summary>
     public partial class App : Application
     {
     }
