@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace Scrabble2018.View
 {
-    /// <summary>
-    /// AboutWindow.xaml 的互動邏輯
-    /// </summary>
     public partial class AboutWindow : Window
     {
         public AboutWindow()
