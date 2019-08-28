@@ -19,11 +19,6 @@ using Scrabble2018.Model.Word;
 
 namespace Scrabble2018
 {
-    /// <summary>
-    /// MainWindow.xaml 的互動邏輯
-    /// </summary>
-    /// 
-
     /*
      * Author: https://github.com/poyea
      * Repo: https://github.com/poyea/scrabble
