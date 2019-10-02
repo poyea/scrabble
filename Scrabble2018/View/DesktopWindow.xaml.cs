@@ -53,6 +53,7 @@ namespace Scrabble2018
                     b.Content = '\0';
                     b.Background = BoardTiles.DetermineColor(i, j);
                     BoardButtons[i,j] = b;
+                    b.PreviewMouseLeftButtonUp += EndDragLetter;
                 }
             }
             // Adding rack buttons
@@ -64,6 +65,7 @@ namespace Scrabble2018
                 HandGrid.Children.Add(t);
                 t.Background = Brushes.Chocolate;
                 t.Content = '\0';
+                t.PreviewMouseLeftButtonDown += StartDragLetter;
                 RackTileButtons.Add(t);
             }
             LogBoardWriter(Welcome.WelcomeText);
@@ -85,6 +87,26 @@ namespace Scrabble2018
                 else { RackTileButtons[i].IsEnabled = false; DisableAll(); }
             }
             StorageLbl.Content = '\0';
+        }
+
+        private void StartDragLetter(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Button button 
+                && button.Content is char c 
+                && c != '\0')
+            {
+                Poster(sender, null);
+            }
+        }
+
+        private void EndDragLetter(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Button button && LastButton != null
+                && button.Content is char c
+                && c == '\0')
+            {
+                Copier(sender, null);
+            }
         }
 
         Button LastButton;
