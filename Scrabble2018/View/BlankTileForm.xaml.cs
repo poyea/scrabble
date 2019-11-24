@@ -19,6 +19,7 @@ namespace Scrabble2018.View
         public BlankTileForm()
         {
             InitializeComponent();
+            this.Topmost = true;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             for( char i = 'A' ; i <= 'Z' ; i++ )
             {
