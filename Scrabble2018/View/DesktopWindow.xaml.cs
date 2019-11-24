@@ -204,7 +204,6 @@ namespace Scrabble2018
         private void LoadRackView()
         {
             DisableAll();
-            this.Topmost = false;
             for (int i = 0; i < game.gs.ListOfPlayers[ThisPlayer].PlayingTiles.Count; ++i)
             {
                 char c = game.gs.ListOfPlayers[ThisPlayer].PlayingTiles[i].TileChar;
@@ -300,6 +299,7 @@ namespace Scrabble2018
 
         private void EnableAll()
         {
+            this.Topmost = true;
             foreach (Button b in RackTileButtons)
             {
                 b.IsEnabled = true;
@@ -313,6 +313,7 @@ namespace Scrabble2018
 
         private void DisableAll()
         {
+            this.Topmost = false;
             foreach (Button b in RackTileButtons)
             {
                 b.IsEnabled = false;
