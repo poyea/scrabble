@@ -7,10 +7,11 @@ Scrabble game in C#, using WPF
 * No "The Fifty Point Bonus"
 
 ## Preview
-
-- ![home](.preview/home.jpg)
-- ![desktop](.preview/desktop.jpg)
-- ![mobile-and-text](.preview/mobile-and-text.jpg)
+<p align="center" >
+  <img src=".preview/home.jpg" alt="home"/>
+  <img src=".preview/desktop.jpg" alt="desktop"  />
+  <img src=".preview/mobile-and-text.jpg" alt="mobile-and-text" />
+</p>
 
 
 
