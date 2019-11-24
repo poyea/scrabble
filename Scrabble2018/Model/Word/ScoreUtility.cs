@@ -13,37 +13,37 @@ namespace Scrabble2018.Model.Word
         {
             int sum = 0;
             List<int> WordMultiply = new List<int>();
-            if (direction == "h")
+            if( direction == "h" )
             {
-                for (int q = j; q <= jM; ++q)
+                for( int q = j ; q <= jM ; ++q )
                 {
-                    if (b[fix, q] != '\0')
+                    if( b[fix, q] != '\0' )
                     {
                         sum += AllTiles.ScoreOfLetter(b[fix, q]) * bt.LetterMultiplier(fix, q);
-                        if (bt.WordMultiplier(fix, q) != 1)
+                        if( bt.WordMultiplier(fix, q) != 1 )
                         {
                             WordMultiply.Add(bt.WordMultiplier(fix, q));
                         }
                     }
-                        
+
                 }
-                foreach (int n in WordMultiply)
+                foreach( int n in WordMultiply )
                     sum *= n;
             }
-            else if (direction == "v")
+            else if( direction == "v" )
             {
-                for (int q = j; q <= jM; ++q)
+                for( int q = j ; q <= jM ; ++q )
                 {
-                    if (b[q, fix] != '\0')
+                    if( b[q, fix] != '\0' )
                     {
                         sum += AllTiles.ScoreOfLetter(b[q, fix]) * bt.LetterMultiplier(q, fix);
-                        if (bt.WordMultiplier(q, fix) != 1)
+                        if( bt.WordMultiplier(q, fix) != 1 )
                         {
                             WordMultiply.Add(bt.WordMultiplier(q, fix));
                         }
                     }
                 }
-                foreach (int n in WordMultiply)
+                foreach( int n in WordMultiply )
                     sum *= n;
             }
             return sum;

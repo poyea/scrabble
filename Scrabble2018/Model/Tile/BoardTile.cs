@@ -23,7 +23,7 @@ namespace Scrabble2018
 
         // Reference BoardTiles and utility
         // Reference is for cancelling used colors
-        public static TileType[,] Placement = 
+        public static TileType[,] Placement =
         {
             {TW,__,__,DL,__,__,__,TW,__,__,__,DL,__,__,TW},
             {__,DW,__,__,__,TL,__,__,__,TL,__,__,__,DW,__},
@@ -55,7 +55,7 @@ namespace Scrabble2018
 
         public int WordMultiplier(int i, int j)
         {
-            switch (PlaceInUse[i, j])
+            switch( PlaceInUse[i, j] )
             {
                 case TileType.WordTriple:
                     Visited[i, j] = true;
@@ -70,7 +70,7 @@ namespace Scrabble2018
 
         public int LetterMultiplier(int i, int j)
         {
-            switch (PlaceInUse[i, j])
+            switch( PlaceInUse[i, j] )
             {
                 case TileType.LetterTriple:
                     Visited[i, j] = true;
@@ -85,11 +85,11 @@ namespace Scrabble2018
 
         public void ApplyVisited()
         {
-            for(int i = 0; i < Visited.GetLength(0); i++)
+            for( int i = 0 ; i < Visited.GetLength(0) ; i++ )
             {
-                for(int j= 0; j < Visited.GetLength(1); j++)
+                for( int j = 0 ; j < Visited.GetLength(1) ; j++ )
                 {
-                    if (Visited[i, j])
+                    if( Visited[i, j] )
                     {
                         PlaceInUse[i, j] = TileType.Default;
                         Visited[i, j] = false;
@@ -101,18 +101,18 @@ namespace Scrabble2018
 
         public void CleanVisited()
         {
-            for (int i = 0; i < Visited.GetLength(0); i++)
+            for( int i = 0 ; i < Visited.GetLength(0) ; i++ )
             {
-                for (int j = 0; j < Visited.GetLength(1); j++)
+                for( int j = 0 ; j < Visited.GetLength(1) ; j++ )
                 {
-                        Visited[i, j] = false;
+                    Visited[i, j] = false;
                 }
             }
         }
 
         public static SolidColorBrush DetermineColor(int i, int j)
         {
-            switch (Placement[i, j])
+            switch( Placement[i, j] )
             {
                 case TileType.WordTriple:
                     return Brushes.OrangeRed;

@@ -20,7 +20,7 @@ namespace Scrabble2018.View
         {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            for (char i = 'A'; i <= 'Z'; i++)
+            for( char i = 'A' ; i <= 'Z' ; i++ )
             {
                 List.Items.Add(i);
             }

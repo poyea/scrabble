@@ -10,7 +10,7 @@
         ResizeMode="CanMinimize"
     >
     <Grid>
-        <Label Content="Author: poyea@Github&#xD;&#xA;Last updated: April 2019" HorizontalContentAlignment="Center" FontFamily="Georgia" Name="About" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="44" Width="168"/>
+        <Label Content="Author: poyea@GitHub&#xA;Repository: poyea/scrabble" HorizontalContentAlignment="Center" FontFamily="Georgia" Name="About" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="44" Width="168"/>
         <Label Content="SCRABBLE" HorizontalContentAlignment="Center" FontFamily="Georgia" FontSize="25" Foreground="Red" HorizontalAlignment="Left" Margin="10,54,0,-75.4" VerticalAlignment="Top" Height="115" Width="174"/>
 
 

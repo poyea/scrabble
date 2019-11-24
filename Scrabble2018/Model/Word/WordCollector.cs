@@ -18,14 +18,14 @@ namespace Scrabble2018.Model.Word
             var Lines = File.ReadAllLines(@"Model\Word\wordlist.txt");
             TxtItems = new List<string>(Lines);
             gamestate.WordsAppearedInValidation.Clear();
-            foreach(string str in gamestate.WordsAppeared)
+            foreach( string str in gamestate.WordsAppeared )
             {
                 gamestate.WordsAppearedInValidation.Add(str);
             }
 
-            if (TxtItems.Contains(s))
+            if( TxtItems.Contains(s) )
             {
-                if (!gamestate.WordsAppearedInValidation.Contains(s))
+                if( !gamestate.WordsAppearedInValidation.Contains(s) )
                 {
                     gamestate.WordsAppearedInValidation.Add(s);
                     return 1; // It's legit
@@ -49,47 +49,47 @@ namespace Scrabble2018.Model.Word
             int Vsum = 0;
             bool VFound = true;
             // vertical
-            for (int current = i; current < b.GetLength(0); current++)
+            for( int current = i ; current < b.GetLength(0) ; current++ )
             {
-                if (b[current, j] != '\0')
+                if( b[current, j] != '\0' )
                 {
-                    
+
                     s += b[current, j];
-                    if (current + 1 == b.GetLength(0))
+                    if( current + 1 == b.GetLength(0) )
                     {
-                        if (s.Length > 1)
+                        if( s.Length > 1 )
                         {
-                            if (Locate(s) == 1)
+                            if( Locate(s) == 1 )
                             {
                                 Vsum += ScoreUtility.ScoreCalc(j, i, current, "v", b, gs.boardTiles);
                                 gs.CorrectWords[s] = Vsum;
                             }
-                            else if (Locate(s) == 0) break;
+                            else if( Locate(s) == 0 ) break;
                             else VFound = false;
                         }
                     }
                 }
                 else
                 {
-                    if (s.Length > 1)
+                    if( s.Length > 1 )
                     {
-                        if (Locate(s) == 1)
+                        if( Locate(s) == 1 )
                         {
                             Vsum += ScoreUtility.ScoreCalc(j, i, current, "v", b, gs.boardTiles);
-                            gs.CorrectWords[s]=Vsum;
+                            gs.CorrectWords[s] = Vsum;
                         }
-                        else if (Locate(s) == 0) break;
+                        else if( Locate(s) == 0 ) break;
                         else VFound = false;
                     }
                     break;
 
                 }
             }
-            if (VFound && Vsum != 0)
+            if( VFound && Vsum != 0 )
             {
-                return Vsum ;
+                return Vsum;
             }
-            else if (!VFound)
+            else if( !VFound )
             {
                 return -1;
             }
@@ -103,46 +103,46 @@ namespace Scrabble2018.Model.Word
             int Hsum = 0;
             bool HFound = true;
             // horizontal 
-            for (int current = j; current < b.GetLength(1); current++)
+            for( int current = j ; current < b.GetLength(1) ; current++ )
             {
-                if (b[i, current] != '\0')
+                if( b[i, current] != '\0' )
                 {
                     s += b[i, current];
-                    if(current + 1 == b.GetLength(1))
+                    if( current + 1 == b.GetLength(1) )
                     {
-                        if (s.Length > 1)
+                        if( s.Length > 1 )
                         {
-                            if (Locate(s) == 1)
+                            if( Locate(s) == 1 )
                             {
                                 Hsum += ScoreUtility.ScoreCalc(i, j, current, "h", b, gs.boardTiles);
-                                gs.CorrectWords[s]= Hsum;
+                                gs.CorrectWords[s] = Hsum;
                             }
-                            else if (Locate(s) == 0) break;
+                            else if( Locate(s) == 0 ) break;
                             else HFound = false;
                         }
                     }
                 }
                 else
                 {
-                    if (s.Length > 1)
+                    if( s.Length > 1 )
                     {
-                        if (Locate(s) == 1)
+                        if( Locate(s) == 1 )
                         {
                             Hsum += ScoreUtility.ScoreCalc(i, j, current, "h", b, gs.boardTiles);
-                            gs.CorrectWords[s]= Hsum;
+                            gs.CorrectWords[s] = Hsum;
                         }
-                        else if (Locate(s) == 0) break;
+                        else if( Locate(s) == 0 ) break;
                         else HFound = false;
                     }
                     break;
                 }
             }
 
-            if (HFound && Hsum != 0)
+            if( HFound && Hsum != 0 )
             {
                 return Hsum;
             }
-            else if (!HFound)
+            else if( !HFound )
             {
                 return -1;
             }
@@ -156,18 +156,18 @@ namespace Scrabble2018.Model.Word
             int Hsum = 0;
             bool HFound = true;
             // horizontal 
-            for (int current = j; current < b.GetLength(1); current++) 
+            for( int current = j ; current < b.GetLength(1) ; current++ )
             {
-                if (b[i, current] != '\0')
+                if( b[i, current] != '\0' )
                 {
                     s += b[i, current];
                 }
                 else
                 {
-                    if (s.Length > 1)
+                    if( s.Length > 1 )
                     {
-                        if (Locate(s) == 1) Hsum += ScoreUtility.ScoreCalc(i, j, current, "h", b, gs.boardTiles);
-                        else if (Locate(s) == 0) break;
+                        if( Locate(s) == 1 ) Hsum += ScoreUtility.ScoreCalc(i, j, current, "h", b, gs.boardTiles);
+                        else if( Locate(s) == 0 ) break;
                         else HFound = false;
                     }
                     break;
@@ -177,11 +177,11 @@ namespace Scrabble2018.Model.Word
             int Vsum = 0;
             bool VFound = true;
 
-            if ((VFound||HFound) && (Vsum != 0 || Hsum != 0))
+            if( ( VFound || HFound ) && ( Vsum != 0 || Hsum != 0 ) )
             {
                 return Vsum + Hsum;
             }
-            else if (!VFound && !HFound)
+            else if( !VFound && !HFound )
             {
                 return -1;
             }
