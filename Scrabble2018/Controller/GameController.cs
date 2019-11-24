@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Threading.Tasks;
 using Scrabble2018.Model;
 using Scrabble2018.Model.Word;
 using Scrabble2018.View;
@@ -82,12 +78,21 @@ namespace Scrabble2018.Controller
 
         public SolidColorBrush UpdateColor(int i, int j)
         {
-            if (gs.boardTiles.PlaceInUse[i, j] == "tw") return Brushes.OrangeRed;
-            else if (gs.boardTiles.PlaceInUse[i, j] == "dw") return Brushes.Coral;
-            else if (gs.boardTiles.PlaceInUse[i, j] == "dl") return Brushes.LightSkyBlue;
-            else if (gs.boardTiles.PlaceInUse[i, j] == "tl") return Brushes.MediumBlue;
-            else if (gs.boardTiles.PlaceInUse[i, j] == "st") return Brushes.Gold;
-            else return Brushes.Bisque;
+            switch (gs.boardTiles.PlaceInUse[i, j])
+            {
+                case TileType.WordTriple:
+                    return Brushes.OrangeRed;
+                case TileType.WordDouble:
+                    return Brushes.Coral;
+                case TileType.LetterDouble:
+                    return Brushes.LightSkyBlue;
+                case TileType.LetterTriple:
+                    return Brushes.MediumBlue;
+                case TileType.Start:
+                    return Brushes.Gold;
+                default:
+                    return Brushes.Bisque;
+            }
         }
 
     }
