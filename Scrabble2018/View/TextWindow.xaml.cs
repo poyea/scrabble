@@ -225,6 +225,11 @@ namespace Scrabble2018
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             //UpdateBoard();
+            if (UserInputBox.Text.Equals(""))
+            {
+                RejectInput();
+                return;
+            }
             switch (UserInputBox.Text.ToString().Substring(0, 4))
             {
                 case "SWAP":
