@@ -8,9 +8,9 @@ Scrabble game in C#, using WPF
 
 ## Preview
 
-- ![home](\.preview\home.jpg)
-- ![desktop](C:\Users\John\source\repos\scrabble\.preview\desktop.jpg)
-- ![mobile-and-text](C:\Users\John\source\repos\scrabble\.preview\mobile-and-text.jpg)
+- ![home](.preview/home.jpg)
+- ![desktop](.preview/desktop.jpg)
+- ![mobile-and-text](.preview/mobile-and-text.jpg)
 
 
 
