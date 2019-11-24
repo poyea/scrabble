@@ -36,8 +36,8 @@ namespace Scrabble2018.Model
         public static GameState GSInstance
         {
             get
-            { 
-                if (gsInstance == null) gsInstance = new GameState();
+            {
+                if( gsInstance == null ) gsInstance = new GameState();
                 return gsInstance;
             }
         }
@@ -53,7 +53,7 @@ namespace Scrabble2018.Model
 
         public int NextPlayer()
         {
-            if (++PlayerNow < NumOfPlayers)
+            if( ++PlayerNow < NumOfPlayers )
             {
                 return PlayerNow;
             }
@@ -81,9 +81,9 @@ namespace Scrabble2018.Model
             this.CorrectWords = new Dictionary<string, int>();
             this.FirstMove = true;
             this.ListOfViews = new List<IView>();
-            for (int i = 0; i < BoardChar.GetLength(0); ++i)
+            for( int i = 0 ; i < BoardChar.GetLength(0) ; ++i )
             {
-                for (int j = 0; j < BoardChar.GetLength(1); ++j)
+                for( int j = 0 ; j < BoardChar.GetLength(1) ; ++j )
                 {
                     BoardChar[i, j] = '\0';
                 }
@@ -97,15 +97,15 @@ namespace Scrabble2018.Model
             this.FirstMove = false;
             PlayerNow = NextPlayer();
 
-            if (b == null) { LastAction = "swap";  OnStateChanged.Invoke(); return; }
+            if( b == null ) { LastAction = "swap"; OnStateChanged.Invoke(); return; }
 
             LastAction = "play";
             PrevScores = PlayerCountingScore;
             playerManager.AddScoresToPlayer(ListOfPlayers[PrevPlayer], PlayerCountingScore);
 
-            for (int i = 0; i < b.GetLength(0); ++i)
+            for( int i = 0 ; i < b.GetLength(0) ; ++i )
             {
-                for (int j = 0; j < b.GetLength(1); ++j)
+                for( int j = 0 ; j < b.GetLength(1) ; ++j )
                 {
                     this.BoardChar[i, j] = b[i, j];
 
@@ -113,9 +113,9 @@ namespace Scrabble2018.Model
             }
 
             PlayerCountingScore = 0;
-            foreach(string s in WordsAppearedInValidation)
+            foreach( string s in WordsAppearedInValidation )
             {
-                if (!WordsAppeared.Exists(e=>e==s))
+                if( !WordsAppeared.Exists(e => e == s) )
                 {
                     WordsAppeared.Add(s);
                 }
@@ -139,17 +139,17 @@ namespace Scrabble2018.Model
 
         public void RegObserver(IView view)
         {
-            if (view != null) ListOfViews.Add(view);
+            if( view != null ) ListOfViews.Add(view);
         }
 
         public void UnregObserver(IView view)
         {
-            if (view != null) ListOfViews.Remove(view);
+            if( view != null ) ListOfViews.Remove(view);
         }
 
         public void NotifyGameStateChange()
         {
-            foreach (IView v in ListOfViews)
+            foreach( IView v in ListOfViews )
             {
                 v.OnStateChanged();
             }

@@ -10,7 +10,7 @@ namespace Scrabble2018.Model
     {
         public static string NumOfPlayersInfo(int num)
         {
-            return "This is a "+num+" players game...";
+            return "This is a " + num + " players game...";
         }
         public static string WelcomeText
         {

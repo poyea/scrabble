@@ -32,10 +32,10 @@ namespace Scrabble2018.Model
 
         public int CompareTo(object obj)
         {
-            if (obj == null) return 1;
+            if( obj == null ) return 1;
 
             Tile OtherTile = obj as Tile;
-            if (OtherTile != null)
+            if( OtherTile != null )
                 return this.TileChar.CompareTo(OtherTile.TileChar);
             else
                 throw new ArgumentException("Tiles Comparison Exception");

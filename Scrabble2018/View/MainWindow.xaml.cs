@@ -35,35 +35,35 @@ namespace Scrabble2018
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int cnt = 0;
-            foreach (ComboBox c in Interfaces.Children)
+            foreach( ComboBox c in Interfaces.Children )
             {
                 ComboBoxItem ci = c.SelectedItem as ComboBoxItem;
-                if (ci != null && ci.ToString() != "") cnt++;
+                if( ci != null && ci.ToString() != "" ) cnt++;
             }
-            if (cnt >=2)
+            if( cnt >= 2 )
             {
                 GameState.GSInstance.Initialise(cnt);
                 int P = 0;
                 Game g = new Game(); // Controller
-                foreach (ComboBox c in Interfaces.Children)
+                foreach( ComboBox c in Interfaces.Children )
                 {
                     ComboBoxItem ci = c.SelectedItem as ComboBoxItem;
-                    if (ci == null) continue;
-                    if (ci.Content.ToString() == "Desktop")
+                    if( ci == null ) continue;
+                    if( ci.Content.ToString() == "Desktop" )
                     {
-                        DesktopWindow dw = new DesktopWindow(P,g);
+                        DesktopWindow dw = new DesktopWindow(P, g);
                         dw.Show();
                         P++;
                     }
-                    else if (ci.Content.ToString() == "Text")
+                    else if( ci.Content.ToString() == "Text" )
                     {
-                        TextWindow tw = new TextWindow(P,g);
+                        TextWindow tw = new TextWindow(P, g);
                         tw.Show();
                         P++;
                     }
-                    else if (ci.Content.ToString() == "Mobile")
+                    else if( ci.Content.ToString() == "Mobile" )
                     {
-                        MobileWindow mw = new MobileWindow(P,g);
+                        MobileWindow mw = new MobileWindow(P, g);
                         mw.Show();
                         P++;
                     }
@@ -72,7 +72,7 @@ namespace Scrabble2018
             }
             else
             {
-                MessageBox.Show("You need more friends to start Scrabble!!!","Find friends!");
+                MessageBox.Show("You need more friends to start Scrabble!!!", "Find friends!");
             }
         }
 
@@ -82,7 +82,7 @@ namespace Scrabble2018
             AboutWindow ab = new AboutWindow();
             ab.ShowDialog();
         }
-        
+
 
     }
 }
