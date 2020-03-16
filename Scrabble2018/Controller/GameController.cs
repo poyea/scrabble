@@ -5,8 +5,6 @@ using Scrabble2018.Model.Word;
 using Scrabble2018.View;
 using System.Windows.Media;
 
-
-
 namespace Scrabble2018.Controller
 {
     public class Game
