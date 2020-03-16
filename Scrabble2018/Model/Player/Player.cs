@@ -32,10 +32,10 @@ namespace Scrabble2018.Model
         }
         public int CompareTo(object obj)
         {
-            if (obj == null) return 1;
+            if( obj == null ) return 1;
 
             Player OtherPlayer = obj as Player;
-            if (OtherPlayer != null)
+            if( OtherPlayer != null )
                 return this.Score.CompareTo(OtherPlayer.Score);
             else
                 throw new ArgumentException("Players Comparison Exception");
@@ -43,7 +43,7 @@ namespace Scrabble2018.Model
 
         public override string ToString()
         {
-            return "Player "+this.id+" has scores "+this.score+" now!";
+            return "Player " + this.id + " has scores " + this.score + " now!";
         }
 
     }

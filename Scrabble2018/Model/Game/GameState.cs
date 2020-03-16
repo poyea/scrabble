@@ -6,7 +6,6 @@ using Scrabble2018.Model.Game;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Scrabble2018.Model
 {
     public class GameState
@@ -64,9 +63,7 @@ namespace Scrabble2018.Model
             }
         }
 
-
         public int NumOfPlayers;
-
 
         public GameState()
         {
@@ -89,7 +86,6 @@ namespace Scrabble2018.Model
                 }
             }
         }
-
 
         public void UpdateState(char[,] b)
         {
@@ -123,7 +119,6 @@ namespace Scrabble2018.Model
             OnStateChanged.Invoke();
         }
 
-
         public void Initialise(int num)
         {
             NumOfPlayers = num;
@@ -132,8 +127,6 @@ namespace Scrabble2018.Model
             //Distribute(); done
             InPlaying = true;
         }
-
-
 
         public List<IView> ListOfViews;
 
@@ -154,9 +147,6 @@ namespace Scrabble2018.Model
                 v.OnStateChanged();
             }
         }
-
-
-
 
     }
 }
