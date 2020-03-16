@@ -262,6 +262,7 @@ namespace Scrabble2018
 
         private void EnableAll()
         {
+            this.Topmost = true;
             UserInputBox.IsEnabled = true;
             SubmitButton.IsEnabled = true;
 
@@ -269,6 +270,7 @@ namespace Scrabble2018
 
         private void DisableAll()
         {
+            this.Topmost = false;
             UserInputBox.IsEnabled = false;
             SubmitButton.IsEnabled = false;
 
