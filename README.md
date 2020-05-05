@@ -1,5 +1,5 @@
-# Scrabble
-Scrabble game in C#, using WPF
+# <p align="center">Scrabble
+<p align="center">Scrabble game in C#, using <a href="https://en.wikipedia.org/wiki/Windows_Presentation_Foundation">WPF</a>.
 
 ## Description
 * Standard 100-pieces version of Scrabble
@@ -7,13 +7,13 @@ Scrabble game in C#, using WPF
 * No "The Fifty Point Bonus"
 
 ## Preview
-<p align="center" >
-  <img src=".preview/home.jpg" alt="home"/>
-  <img src=".preview/desktop.jpg" alt="desktop"  />
-  <img src=".preview/mobile-and-text.jpg" alt="mobile-and-text" />
-</p>
-
-
+<details><summary>Click here</summary>
+  <p align="center">
+    <img src=".preview/home.jpg" alt="home"/>
+    <img src=".preview/desktop.jpg" alt="desktop"  />
+    <img src=".preview/mobile-and-text.jpg" alt="mobile-and-text" />
+  </p>
+</details>
 
 ## If you like this, please
 * Star
