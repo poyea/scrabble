@@ -224,7 +224,7 @@ namespace Scrabble2018
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            //UpdateBoard();
+            // UpdateBoard();
             if( UserInputBox.Text.Equals("") )
             {
                 RejectInput();
@@ -249,7 +249,7 @@ namespace Scrabble2018
                     return;
                 default:
                     RejectInput();
-                    //None of the above
+                    // None of the above
                     return;
             }
         }
@@ -278,7 +278,7 @@ namespace Scrabble2018
 
         public void OnStateChanged()
         {
-            //Enable all buttons
+            // Enable all buttons
 
             ConsoleBoardWriter("Player " + ( GameState.GSInstance.PrevPlayer + 1 ) + " finished his turn!");
             if( game.GameEnd() )

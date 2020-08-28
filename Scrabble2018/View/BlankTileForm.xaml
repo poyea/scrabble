@@ -14,6 +14,5 @@
         <ListBox Name="List" HorizontalAlignment="Left" FontFamily="Georgia" Height="135" VerticalAlignment="Top" Width="111" Margin="27,46,0,0"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,10,-11.2,0" TextWrapping="Wrap" Text="Choose one letter to represent the blank tile:" VerticalAlignment="Top" Height="72" Width="164"/>
         <Button Content="Done" HorizontalAlignment="Left" FontFamily="Georgia" Margin="27,203,0,0" VerticalAlignment="Top" Width="109" Height="25" Click="Button_Click"/>
-
     </Grid>
 </Window>
