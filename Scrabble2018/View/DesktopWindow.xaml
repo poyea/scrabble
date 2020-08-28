@@ -39,7 +39,6 @@
                 <Label x:Name="StorageLbl" Content="" HorizontalAlignment="Left" Margin="298,50,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
             </Grid>
             <Grid HorizontalAlignment="Right" Margin="0,0,0,3" Width="160" Name="Panel">
-                <!--<Button x:Name="StartButton"  Visibility="Hidden" FontSize="35"  Background="Gold" IsEnabled="True" Content="START" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="142" Height="137" Click="StartButton_Click"/>-->
                 <Button x:Name="ValidateButton"  FontSize="15" Background="Green" Foreground="White" IsEnabled="True" Content="FINISH TURN" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="142" Height="50" Click="ValidateButton_Click"/>
                 <Button x:Name="PassButton" FontSize="15" Background="DodgerBlue" Foreground="White" IsEnabled="True" Content="PASS" HorizontalAlignment="Left" Margin="90,117,0,0" VerticalAlignment="Top" Width="62" Height="50" Click="PassButton_Click"/>
                 <Button x:Name="SwapButton" FontSize="15" Background="Tomato" Foreground="White" IsEnabled="True" Content="SWAP" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" Width="60" Height="50" Click="SwapButton_Click"/>

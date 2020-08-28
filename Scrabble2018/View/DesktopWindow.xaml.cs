@@ -351,7 +351,7 @@ namespace Scrabble2018
                 DisableEverthing();
                 return;
             }
-            //Enable all buttons
+            // Enable all buttons
             if( GameState.GSInstance.LastAction == "play" )
             {
                 ListingPrevWords();
@@ -384,7 +384,6 @@ namespace Scrabble2018
                         Poster(b, null);
                     }
                 }
-                //do some stuff here
                 return;
             }
         }

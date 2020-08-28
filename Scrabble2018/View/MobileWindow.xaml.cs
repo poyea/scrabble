@@ -231,7 +231,7 @@ namespace Scrabble2018
 
         private void ValidateButton_Click(object sender, RoutedEventArgs e)
         {
-            //UpdateBoard();
+            // UpdateBoard();
             if( game.moveRecorder.Moves.Count == 0 )
             {
                 PassButton_Click(sender, e);
@@ -256,7 +256,6 @@ namespace Scrabble2018
         private void PassButton_Click(object sender, RoutedEventArgs e)
         {
             GameState.GSInstance.GamePass();
-            //UpdatePlayerInfoLbl(GameState.GSInstance.PlayerNow);
         }
 
 
@@ -290,7 +289,6 @@ namespace Scrabble2018
                 ListSwapRackButton.Clear();
                 SwapButton.Content = "SWAP";
                 PlayerNow = GameState.GSInstance.PlayerNow;
-                //UpdatePlayerInfoLbl(PlayerNow);
                 game.UpdateState(null);
             }
         }
@@ -336,7 +334,7 @@ namespace Scrabble2018
 
         public void OnStateChanged()
         {
-            //Enable all buttons
+            // Enable all buttons
             if( game.GameEnd() )
             {
 
