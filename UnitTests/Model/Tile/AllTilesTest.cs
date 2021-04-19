@@ -26,6 +26,22 @@ namespace UnitTests
         }
 
         [Test]
+        public void AllTiles_Empty_Should_Return_True()
+        {
+            // Arrange
+            AllTiles tiles = new AllTiles();
+
+            // Act
+            tiles.ListTiles.Clear();
+            var result = tiles.Empty();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
         public void AllTiles_ScoreOfLetter_E_Should_Return_1()
         {
             // Arrange
