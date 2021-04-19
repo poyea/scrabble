@@ -166,6 +166,230 @@ namespace UnitTests
         }
 
         [Test]
+        public void AllTiles_ScoreOfLetter_D_Should_Return_2()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('D');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(2, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_G_Should_Return_2()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('G');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(2, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_B_Should_Return_3()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('B');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_C_Should_Return_3()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('C');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_M_Should_Return_3()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('M');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_P_Should_Return_3()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('P');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_F_Should_Return_4()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('F');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(4, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_H_Should_Return_4()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('H');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(4, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_V_Should_Return_4()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('V');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(4, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_W_Should_Return_4()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('W');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(4, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_Y_Should_Return_4()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('Y');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(4, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_K_Should_Return_5()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('K');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(5, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_J_Should_Return_8()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('J');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(8, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_X_Should_Return_8()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('X');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(8, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_Q_Should_Return_10()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('Q');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(10, result);
+        }
+
+        [Test]
+        public void AllTiles_ScoreOfLetter_Z_Should_Return_10()
+        {
+            // Arrange
+
+            // Act
+            var result = AllTiles.ScoreOfLetter('Z');
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(10, result);
+        }
+
+        [Test]
         public void AllTiles_ScoreOfLetter_Dash_Should_Return_0()
         {
             // Arrange
