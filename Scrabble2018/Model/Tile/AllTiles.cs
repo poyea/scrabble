@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,6 +59,7 @@ namespace Scrabble2018.Model
             else return 0;
         }
 
+        [ExcludeFromCodeCoverage]
         private static int NumOfLetters(char c)
         {
             if( c == 'Z' || c == 'Q' || c == 'X' || c == 'J' || c == 'K' ) return 1;
