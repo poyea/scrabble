@@ -71,5 +71,19 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(5, result);
         }
+
+        [Test]
+        public void Tiles_TileChar_CompareTo_Null_Should_Return_1()
+        {
+            // Arrange
+
+            // Act
+            var result = tile.CompareTo(null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
     }
 }
