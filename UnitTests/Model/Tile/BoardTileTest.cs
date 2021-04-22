@@ -83,5 +83,19 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(2, result);
         }
+
+        [Test]
+        public void BoardTile_LetterMultiplier_Default_Square_Should_Return_1()
+        {
+            // Arrange
+
+            // Act
+            var result = bt.LetterMultiplier(0, 1);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
     }
 }
