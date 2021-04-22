@@ -100,5 +100,20 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(1, result);
         }
+
+        [Test]
+        public void Tiles_TileChar_CompareTo_Valid_Tile_Should_Return_Negative_23()
+        {
+            // Arrange
+            Tile otherTile = new Tile('z', 5);
+
+            // Act
+            var result = tile.CompareTo(otherTile);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(-23, result);
+        }
     }
 }
