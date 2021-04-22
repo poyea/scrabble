@@ -1,5 +1,7 @@
 using NUnit.Framework;
+using Scrabble2018;
 using Scrabble2018.Model;
+using System;
 
 namespace UnitTests
 {
@@ -114,6 +116,20 @@ namespace UnitTests
 
             // Assert
             Assert.AreEqual(-23, result);
+        }
+
+        [Test]
+        public void Tiles_TileChar_CompareTo_Invalid_Object_Should_Throw_Exception()
+        {
+            // Arrange
+            BoardTiles otherTile = new BoardTiles();
+
+            // Act
+
+            // Reset
+
+            // Assert
+            Assert.Throws<ArgumentException>(() => tile.CompareTo(otherTile));
         }
     }
 }
