@@ -85,5 +85,20 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(1, result);
         }
+
+        [Test]
+        public void Tiles_TileChar_CompareTo_Valid_Tile_Should_Return_1()
+        {
+            // Arrange
+            Tile otherTile = new Tile('b', 5);
+
+            // Act
+            var result = tile.CompareTo(otherTile);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
     }
 }
