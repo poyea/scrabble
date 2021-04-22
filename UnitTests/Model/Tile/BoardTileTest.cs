@@ -97,5 +97,27 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(1, result);
         }
+
+        /*
+         * This is an interesting unit test. The method that is being tested
+         * (CleanVisited) is void, so we can't verify anything except the 
+         * fact that we made it through the method successfully. So, the
+         * goal of this unit test is exactly that: If we get through this unit
+         * test and it passes, then we know we made it through that method
+         * successfully.
+         */
+        [Test]
+        public void BoardTile_CleanVisited_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            bt.CleanVisited();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
