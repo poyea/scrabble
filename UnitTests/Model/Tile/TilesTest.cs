@@ -5,16 +5,17 @@ namespace UnitTests
 {
     public class TilesTest
     {
+        Tile tile;
         [SetUp]
         public void Setup()
         {
+            tile = new Tile('c', 10);
         }
 
         [Test]
         public void Tiles_TileChar_Get_Should_Return_c()
         {
             // Arrange
-            Tile tile = new Tile('c', 10);
 
             // Act
             var result = tile.TileChar;
@@ -29,16 +30,30 @@ namespace UnitTests
         public void Tiles_TileChar_Set_Should_Return_d()
         {
             // Arrange
-            Tile tile = new Tile('c', 10);
             tile.TileChar = 'd';
 
             // Act
             var result = tile.TileChar;
 
             // Reset
+            tile.TileChar = 'c';
 
             // Assert
             Assert.AreEqual('d', result);
+        }
+
+        [Test]
+        public void Tiles_TileChar_Set_Should_Return_10()
+        {
+            // Arrange
+
+            // Act
+            var result = tile.TileScore;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(10, result);
         }
     }
 }
