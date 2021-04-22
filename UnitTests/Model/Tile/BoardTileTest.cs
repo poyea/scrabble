@@ -27,5 +27,19 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(3, result);
         }
+
+        [Test]
+        public void BoardTile_WordMultiplier_WordDouble_Should_Return_2()
+        {
+            // Arrange
+
+            // Act
+            var result = bt.WordMultiplier(1, 1);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(2, result);
+        }
     }
 }
