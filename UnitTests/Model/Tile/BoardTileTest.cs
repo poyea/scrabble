@@ -41,5 +41,19 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(2, result);
         }
+
+        [Test]
+        public void BoardTile_WordMultiplier_Default_Square_Should_Return_1()
+        {
+            // Arrange
+
+            // Act
+            var result = bt.WordMultiplier(1, 0);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
     }
 }
