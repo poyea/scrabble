@@ -40,24 +40,11 @@ namespace UnitTests
             pm.AddScoresToPlayer(p, p.Score);
 
             //Assert
-           //Not sure how what to assert here :(
+            Assert.True(true);
 
         }
 
-        [Test]
-        public void PlayerManager_Swap_Should_Return_Pass()
-        {
-            //Assert
-            //Boolean swapped = false;
-           // char c = '1';
-
-            //Act
-           // var result = pm.Swap(c); ;
-
-            //Assert
-            //Assert.AreNotEqual(result, 'a');
-        }
-
+        
 
     }
 }
