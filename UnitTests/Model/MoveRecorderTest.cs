@@ -27,5 +27,20 @@ namespace UnitTests
             Assert.AreEqual(0, mr.Index.Count);
             Assert.AreEqual(0, mr.Moves.Count);
         }
+
+        [Test]
+        public void MoveRecorder_Record_Moves_Should_Not_Be_Empty()
+        {
+            //Arrange
+
+            //Act
+            mr.Record(1, 1);
+
+            //Assert
+            Assert.AreEqual(1, mr.Moves.Count);
+
+            //Reset
+            mr.Reset();
+        }
     }
 }
