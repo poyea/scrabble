@@ -18,5 +18,17 @@ namespace UnitTests
             //Assert
             Assert.AreEqual("This is a 2 players game...", result);
         }
+
+        [Test]
+        public void Welcome_WelcomeText_Should_Return_Default_Text()
+        {
+            //Arrange
+            String result = Welcome.WelcomeText;
+
+            //Act
+
+            //Assert
+            Assert.AreEqual("Welcome players! Welcome to Scrabble!", result);
+        }
     }
 }
