@@ -42,5 +42,24 @@ namespace UnitTests
             //Reset
             mr.Reset();
         }
+
+        [Test]
+        public void MoveRecorder_Reset_Check_Variables_Should_Pass()
+        {
+            //Arrange
+
+            //Act
+            mr.Record(1, 1);
+            mr.Record(2, 2);
+            mr.Reset();
+
+            //Assert
+            Assert.AreEqual(0, mr.Moves.Count);
+            Assert.AreEqual(0, mr.Index.Count);
+            Assert.AreEqual("", mr.Direction);
+            Assert.AreEqual(-1, mr.Fixed);
+
+            //Reset
+        }
     }
 }
