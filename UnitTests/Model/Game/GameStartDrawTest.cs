@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace UnitTests
 {
-    public class GameEndVerifyTest
+    public class GameStartDrawTest
     {
         [SetUp]
         public void Setup()
