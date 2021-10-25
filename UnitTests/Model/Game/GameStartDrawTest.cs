@@ -1,8 +1,5 @@
 using NUnit.Framework;
-using Scrabble2018;
-using Scrabble2018.Model;
 using Scrabble2018.Model.Game;
-using System;
 
 namespace UnitTests
 {

@@ -1,7 +1,4 @@
 using NUnit.Framework;
-using Scrabble2018;
-using Scrabble2018.Model.Word;
-using System.Collections.Generic;
 
 namespace UnitTests
 {

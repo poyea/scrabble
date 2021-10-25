@@ -134,7 +134,6 @@ namespace Scrabble2018
 
         private void UpdatePlayerInfoLbl(int turn)
         {
-            string s = "";
             if (ThisPlayer == GameState.GSInstance.PlayerNow)
             {
                 PlayerInfoLbl.Content = "Your turn!";
