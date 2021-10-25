@@ -1,21 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Scrabble2018.View;
 using Scrabble2018.Model;
 using Scrabble2018.Controller;
-using Scrabble2018.Model.Word;
 
 namespace Scrabble2018
 {
@@ -35,33 +22,33 @@ namespace Scrabble2018
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int cnt = 0;
-            foreach( ComboBox c in Interfaces.Children )
+            foreach (ComboBox c in Interfaces.Children)
             {
                 ComboBoxItem ci = c.SelectedItem as ComboBoxItem;
-                if( ci != null && ci.ToString() != "" ) cnt++;
+                if (ci != null && ci.ToString() != "") cnt++;
             }
-            if( cnt >= 2 )
+            if (cnt >= 2)
             {
                 GameState.GSInstance.Initialise(cnt);
                 int P = 0;
                 Game g = new Game(); // Controller
-                foreach( ComboBox c in Interfaces.Children )
+                foreach (ComboBox c in Interfaces.Children)
                 {
                     ComboBoxItem ci = c.SelectedItem as ComboBoxItem;
-                    if( ci == null ) continue;
-                    if( ci.Content.ToString() == "Desktop" )
+                    if (ci == null) continue;
+                    if (ci.Content.ToString() == "Desktop")
                     {
                         DesktopWindow dw = new DesktopWindow(P, g);
                         dw.Show();
                         P++;
                     }
-                    else if( ci.Content.ToString() == "Text" )
+                    else if (ci.Content.ToString() == "Text")
                     {
                         TextWindow tw = new TextWindow(P, g);
                         tw.Show();
                         P++;
                     }
-                    else if( ci.Content.ToString() == "Mobile" )
+                    else if (ci.Content.ToString() == "Mobile")
                     {
                         MobileWindow mw = new MobileWindow(P, g);
                         mw.Show();

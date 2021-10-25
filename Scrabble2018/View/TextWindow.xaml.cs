@@ -1,23 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Scrabble2018.View;
 using Scrabble2018.Model;
 using Scrabble2018.Controller;
-using Scrabble2018.Model.Word;
 using Scrabble2018.Model.Game;
-
 
 namespace Scrabble2018
 {
@@ -37,24 +26,24 @@ namespace Scrabble2018
             game = g;
             game.Subs(this);
             GameState.GSInstance.OnStateChanged += OnStateChanged;
-            this.Title = "Player " + ( P + 1 ) + " - ScrabbleConsole";
+            this.Title = "Player " + (P + 1) + " - ScrabbleConsole";
             RackChar = new List<char>();
 
             ConsoleBoardWriter(Welcome.WelcomeText);
             ConsoleBoardWriter("Game starts...");
             ConsoleBoardWriter("This is a " + GameState.GSInstance.NumOfPlayers + " players game.");
 
-            foreach( KeyValuePair<int, Tile> kvp in GameStartDraw.Drawn )
+            foreach (KeyValuePair<int, Tile> kvp in GameStartDraw.Drawn)
             {
-                ConsoleBoardWriter("Player " + ( kvp.Key + 1 ) + " gets " + kvp.Value.TileChar + "!");
+                ConsoleBoardWriter("Player " + (kvp.Key + 1) + " gets " + kvp.Value.TileChar + "!");
             }
-            ConsoleBoardWriter("Player " + ( GameState.GSInstance.PlayerNow + 1 ) + " first!");
+            ConsoleBoardWriter("Player " + (GameState.GSInstance.PlayerNow + 1) + " first!");
 
-            for( int i = 0 ; i < GameState.GSInstance.ListOfPlayers[ThisPlayer].PlayingTiles.Count ; ++i )
+            for (int i = 0; i < GameState.GSInstance.ListOfPlayers[ThisPlayer].PlayingTiles.Count; ++i)
             {
                 char c = GameState.GSInstance.ListOfPlayers[ThisPlayer].PlayingTiles[i].TileChar;
                 RackChar.Add(c);
-                if( GameState.GSInstance.PlayerNow == ThisPlayer ) { EnableAll(); }
+                if (GameState.GSInstance.PlayerNow == ThisPlayer) { EnableAll(); }
 
                 else { DisableAll(); }
             }
@@ -66,11 +55,11 @@ namespace Scrabble2018
         private void LoadBoardView()
         {
             ConsoleBoardWriter("      0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 Y");
-            for( int i = 0 ; i < BoardCharView.GetLength(0) ; ++i )
+            for (int i = 0; i < BoardCharView.GetLength(0); ++i)
             {
-                if( i < 10 ) ConsoleBoardWrite(i.ToString() + "   ");
+                if (i < 10) ConsoleBoardWrite(i.ToString() + "   ");
                 else ConsoleBoardWrite(i.ToString() + " ");
-                for( int j = 0 ; j < BoardCharView.GetLength(1) ; ++j )
+                for (int j = 0; j < BoardCharView.GetLength(1); ++j)
                 {
                     BoardCharView[i, j] = game.gs.BoardChar[i, j];
                     ConsoleBoardWrite(BoardCharView[i, j]);
@@ -107,7 +96,7 @@ namespace Scrabble2018
         {
             ConsoleBoardWrite("Scores of each player: ");
             string str = "";
-            foreach( Player p in GameState.GSInstance.ListOfPlayers )
+            foreach (Player p in GameState.GSInstance.ListOfPlayers)
             {
                 str += "Player " + p.Id + " - " + p.Score + " | ";
             }
@@ -122,14 +111,14 @@ namespace Scrabble2018
             UserInputBox.Text = "";
             ConsoleBoardWrite("***You have tiles: ");
 
-            for( int i = 0 ; i < game.gs.ListOfPlayers[ThisPlayer].PlayingTiles.Count ; ++i )
+            for (int i = 0; i < game.gs.ListOfPlayers[ThisPlayer].PlayingTiles.Count; ++i)
             {
                 RackChar.Clear();
                 RackChar.Add(game.gs.ListOfPlayers[ThisPlayer].PlayingTiles[i].TileChar);
                 ConsoleBoardWrite(game.gs.ListOfPlayers[ThisPlayer].PlayingTiles[i].TileChar);
             }
             ConsoleBoardWriter("***");
-            if( ThisPlayer == GameState.GSInstance.PlayerNow )
+            if (ThisPlayer == GameState.GSInstance.PlayerNow)
             {
                 EnableAll();
                 ConsoleBoardWriter("Your turn now!");
@@ -142,8 +131,8 @@ namespace Scrabble2018
 
         private void ListingPrevWords()
         {
-            string s = "Player " + ( GameState.GSInstance.PrevPlayer + 1 ) + " made the words: ";
-            foreach( KeyValuePair<string, int> kvp in GameState.GSInstance.CorrectWords )
+            string s = "Player " + (GameState.GSInstance.PrevPlayer + 1) + " made the words: ";
+            foreach (KeyValuePair<string, int> kvp in GameState.GSInstance.CorrectWords)
             {
                 s += kvp.Key + "(" + kvp.Value + " scores) ";
             }
@@ -154,11 +143,11 @@ namespace Scrabble2018
         {
             s = s.Substring(5, s.Length - 5);
             List<string> StrGot = new List<string>(s.Split(' '));
-            foreach( string str in StrGot )
+            foreach (string str in StrGot)
             {
-                if( RackChar.Contains(str[0]) )
+                if (RackChar.Contains(str[0]))
                 {
-                    game.SwapChar(( str[0] ));
+                    game.SwapChar((str[0]));
                 }
             }
             game.UpdateState(null);
@@ -186,14 +175,14 @@ namespace Scrabble2018
             s = s.Substring(5, s.Length - 5);
             List<string> StrGot = new List<string>(s.Split(' '));
             List<char> CharList = new List<char>();
-            foreach( string g in StrGot )
+            foreach (string g in StrGot)
             {
                 string[] ss = g.Split(',');
                 ss[0] = ss[0].Substring(2, ss[0].Length - 2);
                 ss[1] = ss[1].Remove(ss[1].Length - 1);
                 int X;
                 int Y;
-                if( Int32.TryParse(ss[0], out X) && Int32.TryParse(ss[1], out Y) && ( X >= 0 && X <= 14 && Y >= 0 && Y <= 14 && g[0] != '\0' ) )
+                if (Int32.TryParse(ss[0], out X) && Int32.TryParse(ss[1], out Y) && (X >= 0 && X <= 14 && Y >= 0 && Y <= 14 && g[0] != '\0'))
                 {
                     BoardCharView[X, Y] = g[0];
                 }
@@ -208,7 +197,7 @@ namespace Scrabble2018
                 game.moveRecorder.Record(X, Y);
                 CharList.Add(g[0]);
             }
-            if( game.Validate(BoardCharView) )
+            if (game.Validate(BoardCharView))
             {
                 GetNewTiles(CharList);
                 game.UpdateState(BoardCharView);
@@ -225,16 +214,16 @@ namespace Scrabble2018
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             // UpdateBoard();
-            if( UserInputBox.Text.Equals("") )
+            if (UserInputBox.Text.Equals(""))
             {
                 RejectInput();
                 return;
             }
-            switch( UserInputBox.Text.ToString().Substring(0, 4) )
+            switch (UserInputBox.Text.ToString().Substring(0, 4))
             {
                 case "SWAP":
                     {
-                        if( game.CanSwap() ) { Swap(UserInputBox.Text.ToString()); }
+                        if (game.CanSwap()) { Swap(UserInputBox.Text.ToString()); }
                         else RejectSwap();
                         return;
                     }
@@ -280,30 +269,30 @@ namespace Scrabble2018
         {
             // Enable all buttons
 
-            ConsoleBoardWriter("Player " + ( GameState.GSInstance.PrevPlayer + 1 ) + " finished his turn!");
-            if( game.GameEnd() )
+            ConsoleBoardWriter("Player " + (GameState.GSInstance.PrevPlayer + 1) + " finished his turn!");
+            if (game.GameEnd())
             {
-                foreach( Player p in game.gs.ListOfPlayers )
+                foreach (Player p in game.gs.ListOfPlayers)
                 {
                     ConsoleBoardWriter(game.gs.ListOfPlayers[PlayerNow].ToString());
                 }
                 game.gs.ListOfPlayers.Sort();
-                ConsoleBoardWriter("Winner is P" + ( game.gs.ListOfPlayers[0].Id + 1 ) + " with scores" + ( game.gs.ListOfPlayers[0].Score ) + "!");
+                ConsoleBoardWriter("Winner is P" + (game.gs.ListOfPlayers[0].Id + 1) + " with scores" + (game.gs.ListOfPlayers[0].Score) + "!");
                 DisableAll();
                 return;
             }
-            if( GameState.GSInstance.LastAction == "play" )
+            if (GameState.GSInstance.LastAction == "play")
             {
                 ListingPrevWords();
                 ConsoleBoardWriter(game.gs.ListOfPlayers[GameState.GSInstance.PrevPlayer].ToString());
             }
-            else if( GameState.GSInstance.LastAction == "pass" )
+            else if (GameState.GSInstance.LastAction == "pass")
             {
-                ConsoleBoardWriter("Player " + ( GameState.GSInstance.PrevPlayer + 1 ) + " passed!");
+                ConsoleBoardWriter("Player " + (GameState.GSInstance.PrevPlayer + 1) + " passed!");
             }
-            else if( GameState.GSInstance.LastAction == "swap" )
+            else if (GameState.GSInstance.LastAction == "swap")
             {
-                ConsoleBoardWriter("Player " + ( GameState.GSInstance.PrevPlayer + 1 ) + " swapped his tiles!");
+                ConsoleBoardWriter("Player " + (GameState.GSInstance.PrevPlayer + 1) + " swapped his tiles!");
             }
             PlayerNow = GameState.GSInstance.PlayerNow;
             LoadBoardView();
@@ -312,7 +301,7 @@ namespace Scrabble2018
 
         private void UserInputBox_KeyUp(object sender, KeyEventArgs e)
         {
-            if( e.Key == Key.Enter )
+            if (e.Key == Key.Enter)
             {
                 SubmitButton_Click(sender, e);
             }
