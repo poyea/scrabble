@@ -93,10 +93,10 @@ namespace UnitTests
             PlayerManager pm = new PlayerManager();
 
             //Act
-            
+
 
             //Assert
-            Assert.Throws<ArgumentException>(() =>player.CompareTo(pm));
+            Assert.Throws<ArgumentException>(() => player.CompareTo(pm));
 
         }
     }

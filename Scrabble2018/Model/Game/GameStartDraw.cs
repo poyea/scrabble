@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Scrabble2018.Model.Game;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Scrabble2018.Model.Game
 {
@@ -18,7 +15,7 @@ namespace Scrabble2018.Model.Game
         {
             Drawn = new Dictionary<int, Tile>();
             TilesBag = new AllTiles();
-            for( int i = 0 ; i < GameState.GSInstance.NumOfPlayers ; i++ )
+            for (int i = 0; i < GameState.GSInstance.NumOfPlayers; i++)
             {
                 Drawn.Add(i, TilesBag.ListTiles[rnd.Next(0, TilesBag.ListTiles.Count)]);
             }

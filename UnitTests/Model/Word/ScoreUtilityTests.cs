@@ -15,7 +15,6 @@ namespace UnitTests
         [Test]
         public static void ScoreUtilityTests_ScoreCalc_Return_corretScoreSum()
         {
-           
         }
     }
 }

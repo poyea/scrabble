@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Scrabble2018.View;
 using Scrabble2018.Model.Game;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Scrabble2018.Model
 {
