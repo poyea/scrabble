@@ -16,7 +16,7 @@
 </details>
 
 ## To build the project
-You need Visual Studio >=2017. 
+You need Visual Studio >=2019. 
 
 ## If you like this, please
 * Star
