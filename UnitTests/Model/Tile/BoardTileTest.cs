@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using Scrabble2018;
+using Scrabble;
 
 namespace UnitTests
 {

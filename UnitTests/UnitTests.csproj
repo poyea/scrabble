@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Scrabble2018\Scrabble2018.csproj" />
+    <ProjectReference Include="..\Scrabble\Scrabble.csproj" />
   </ItemGroup>
 
 </Project>

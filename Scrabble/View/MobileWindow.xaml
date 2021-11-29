@@ -1,0 +1,43 @@
+﻿<Window x:Class="Scrabble.MobileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Scrabble" Height="370" Width="250"
+        Background="AntiqueWhite" 
+        ResizeMode="CanMinimize"
+        >
+
+    <Grid>
+        <Button x:Name="ValidateButton"  FontSize="15" Background="Green" Foreground="White" IsEnabled="True" Content="DONE" HorizontalAlignment="Left" Margin="151,243,0,0" VerticalAlignment="Top" Width="69" Height="24" Click="ValidateButton_Click"/>
+        <Button x:Name="SwapButton" FontSize="15" Background="Tomato" Foreground="White" IsEnabled="True" Content="SWAP" HorizontalAlignment="Left" Margin="12,243,0,0" VerticalAlignment="Top" Width="70" Height="24" Click="SwapButton_Click"/>
+        <Button x:Name="ReloadButton" FontSize="15" Background="PaleVioletRed" Foreground="White" IsEnabled="True" Content="RELOAD" HorizontalAlignment="Left" Margin="82,243,0,0" VerticalAlignment="Top" Width="69" Height="24" Click="ReloadButton_Click"/>
+        <UniformGrid x:Name="BoardGrid" Columns="15" Rows="15" HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="233" Margin="0,6,0,0">
+            <UniformGrid.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="0.5"/>
+                    <Setter Property="FontSize" Value="9"/>
+                </Style>
+            </UniformGrid.Resources>
+        </UniformGrid>
+
+
+        <Grid HorizontalAlignment="Left" Height="490" Margin="671,3,0,0" VerticalAlignment="Top" Width="601"/>
+        <Grid Height="75" Margin="0,265,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="233">
+            <Label x:Name="PlayerInfoLbl" Content="Check your tiles!" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="233" FontSize="13" FontFamily="Microsoft YaHei Mono"/>
+            <UniformGrid x:Name="HandGrid" Columns="7" Rows="1" Margin="0,0,0,10" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="233">
+                <UniformGrid.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="2"/>
+                        <Setter Property="FontSize" Value="13"/>
+                    </Style>
+                </UniformGrid.Resources>
+            </UniformGrid>
+            <Label x:Name="StorageLbl" Content="" HorizontalAlignment="Left" Margin="298,50,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+            <Grid HorizontalAlignment="Right" Margin="0,0,0,3" Width="160" Name="Panel">
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
