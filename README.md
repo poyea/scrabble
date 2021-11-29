@@ -24,6 +24,4 @@ You need Visual Studio ≥2019.
 * Contribute
 
 ## License
-
-MIT
-
+This repository is licensed under MIT License. See also [LICENSE.md](LICENSE.md) for details.
